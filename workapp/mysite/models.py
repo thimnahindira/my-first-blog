@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 class Post(models.Model):
-    first_name = models.CharField("Nome Completo", max_length=50)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     CPF = models.IntegerField(max_length=20)
     Endereço = models.CharField(max_length=200)
     Profissão = models.TextField()
